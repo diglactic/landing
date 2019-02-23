@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head lang="en">
+  <title>Diglactic</title>
+  <meta name="theme-color"
+        content="#5627c2">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Coming Soon">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700"
+        rel="stylesheet">
+  <style type="text/css">
+  * {
+    box-sizing          : border-box;
+    transition          : .3s ease;
+    transition-property : opactity, color, border-color, background-color;
+  }
+
+  html {
+    height : 100%;
+    font   : 14px 'Oyxgen', sans-serif;
+  }
+
+  body {
+    background : #5627c2;
+    min-height : 100%;
+    margin     : 0;
+    font-size  : 0;
+    overflow   : hidden;
+    cursor     : default;
+  }
+
+  .btn {
+    color           : #ffffff;
+    font-size       : 1rem;
+    text-transform  : uppercase;
+    border          : 1px solid #ffffff;
+    margin          : 1rem 0;
+    text-decoration : none;
+    padding         : 1rem 2rem;
+    border-radius   : 2rem;
+    letter-spacing  : .5px;
+  }
+
+  .btn:hover {
+    background-color : #ffffff;
+    color            : #5627c2;
+  }
+
+  #background {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    opacity         : .05;
+    z-index         : 0;
+  }
+
+  @keyframes background__image--entrance {
+    0% {
+      transform : scale(1.05);
+    }
+    100% {
+      opacity : 1;
+    }
+  }
+
+  #background__image {
+    opacity    : 0;
+    object-fit : cover;
+    width      : 100%;
+    height     : 100%;
+  }
+
+  #background__image.background__image--ready {
+    animation : background__image--entrance 1s ease forwards;
+  }
+
+  @keyframes hero--entrance {
+    0% {
+      opacity   : 0;
+      transform : translateY(1rem);
+    }
+  }
+
+  #hero {
+    max-height      : none;
+    min-height      : fit-content;
+    z-index         : 1;
+    position        : absolute;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    bottom          : 0;
+    overflow        : auto;
+    display         : flex;
+    flex-direction  : column;
+    align-items     : center;
+    justify-content : center;
+    animation       : hero--entrance .6s ease;
+  }
+
+  #hero-logo {
+    max-width : 80%;
+    width     : 512px;
+  }
+
+  #hero-btn {
+    margin : 4rem 0 0;
+  }
+  </style>
+</head>
+<body>
+  <div id="background">
+    <img id="background__image"
+         src="//source.unsplash.com/1600x900/?nature,water">
+  </div>
+  <div id="hero">
+    <img src="/assets/logo.svg"
+         id="hero-logo"
+         alt="Diglactic Logo">
+    <a class="btn"
+       id="hero-btn"
+       href="mailto:hello@diglactic.com">
+      Get In Touch
+    </a>
+  </div>
+  <script>
+  {
+    const backgroundImage = document.querySelector('#background__image');
+
+    function backgroundImageReady() {
+      backgroundImage.classList.add('background__image--ready');
+    }
+
+    if (backgroundImage.complete) {
+      backgroundImageReady();
+    } else {
+      backgroundImage.addEventListener('load', () => {
+        backgroundImageReady();
+      });
+    }
+  }
+  </script>
+</body>

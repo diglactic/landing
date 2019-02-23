@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="200" viewBox="0 0 1000 200">
+  <defs>
+    <clipPath id="clip-Logo">
+      <rect width="1000" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="Logo" clip-path="url(#clip-Logo)">
+    <g id="Group_2" data-name="Group 2" transform="translate(-248 -262)">
+      <text id="TI" transform="translate(955.561 428)" fill="#fff" font-size="175" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.04em"><tspan x="0" y="0">TI</tspan></text>
+      <text id="IGL" transform="translate(375.592 428)" fill="#fff" font-size="175" font-family="SegoeUI-Bold, Segoe UI" font-weight="700" letter-spacing="0.04em"><tspan x="0" y="0">IGL</tspan></text>
+      <path id="Path_15" data-name="Path 15" d="M1089.169,331.291s27.572-123.373,61.791-123.373,61.049,123.373,61.049,123.373l-29.641-2.948s-16.7-85.171-31.407-85.171-33.316,85.171-33.316,85.171Z" transform="translate(-401.995 97.367)" fill="#fff"/>
+      <path id="Path_16" data-name="Path 16" d="M80.078-577.2v-123H123.65q65.53,0,65.53,59.955,0,28.734-17.884,45.888T123.65-577.2Zm0-100.439v77.967h41.428q18.012,0,28.262-10.807t10.25-29.42q0-17.583-10.164-27.662t-28.519-10.078Z" transform="translate(176.67 1005.856)" fill="#fff"/>
+      <path id="Path_17" data-name="Path 17" d="M0,123V0H43.572Q109.1,0,109.1,59.955q0,28.734-17.884,45.888T43.572,123ZM0,22.558v77.967H41.428q18.012,0,28.262-10.807T79.94,60.3q0-17.583-10.164-27.662T41.256,22.558Z" transform="translate(938.463 428.658) rotate(180)" fill="#fff"/>
+      <path id="Path_18" data-name="Path 18" d="M0,123V0H43.572Q109.1,0,109.1,59.955q0,28.734-17.884,45.888T43.572,123ZM0,22.558v77.967H41.428q18.012,0,28.262-10.807T79.94,60.3q0-17.583-10.164-27.662T41.256,22.558Z" transform="translate(1240.098 428.658) rotate(180)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
