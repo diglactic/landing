@@ -129,7 +129,7 @@
          id="hero__logo"
          alt="Diglactic Logo">
     <small id="hero__subtitle">
-      New York - Coming Soon
+      Coming Soon
     </small>
     <a class="btn"
        id="hero__button"
@@ -144,7 +144,7 @@
     const $backgroundImage = document.querySelector('#background__image');
 
     $backgroundImage.addEventListener('load', () => {
-      $backgroundImage.classList.add('background-image--ready');
+      $backgroundImage.classList.add('background__image--ready');
     });
 
     $backgroundImage.setAttribute('src', `//source.unsplash.com/random/${screen.width}x${screen.height}?nature,water`);
