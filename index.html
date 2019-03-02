@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <head lang="en">
-  <title>Diglactic</title>
+  <title>Diglactic - Coming Soon</title>
   <meta name="theme-color"
         content="#5627c2">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="Coming Soon">
+        content="New York-based web development coming soon.">
   <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700"
         rel="stylesheet">
   <style type="text/css">
   * {
     box-sizing          : border-box;
     transition          : .3s ease;
-    transition-property : opactity, color, border-color, background-color;
+    transition-property : opacity, color, border-color, background-color;
   }
 
   html {
@@ -22,12 +22,13 @@
   }
 
   body {
-    background : #5627c2;
-    min-height : 100%;
-    margin     : 0;
-    font-size  : 0;
-    overflow   : hidden;
-    cursor     : default;
+    background  : #5627c2;
+    min-height  : 100%;
+    margin      : 0;
+    font-size   : 0;
+    overflow    : hidden;
+    cursor      : default;
+    user-select : none;
   }
 
   .btn {
@@ -104,59 +105,54 @@
     animation       : hero--entrance .6s ease;
   }
 
-  #hero-logo {
+  #hero__logo {
     max-width : 80%;
     width     : 512px;
   }
 
-  #hero-btn {
-    margin : 4rem 0 0;
+  #hero__subtitle {
+    font-size  : 1rem;
+    font-style : italic;
+    color      : #ffffff;
+    margin     : 2rem 0;
+    opacity    : .75;
   }
   </style>
 </head>
 <body>
   <div id="background">
     <img id="background__image"
-         src="//source.unsplash.com/1600x900/?nature,water">
+         alt="Unsplash Wallpaper">
   </div>
   <div id="hero">
     <img src="/assets/logo.svg"
-         id="hero-logo"
+         id="hero__logo"
          alt="Diglactic Logo">
+    <small id="hero__subtitle">
+      New York - Coming Soon
+    </small>
     <a class="btn"
-       id="hero-btn"
+       id="hero__button"
        href="mailto:hello@diglactic.com">
       Get In Touch
     </a>
   </div>
   <script>
   {
-    // landing
+    // landing--
 
-    const backgroundImage = document.querySelector('#background__image');
+    const $backgroundImage = document.querySelector('#background__image');
 
-    function backgroundImageReady() {
-      backgroundImage.classList.add('background__image--ready');
-    }
+    $backgroundImage.addEventListener('load', () => {
+      $backgroundImage.classList.add('background-image--ready');
+    });
 
-    if (backgroundImage.complete) {
-      backgroundImageReady();
-    } else {
-      backgroundImage.addEventListener('load', () => {
-        backgroundImageReady();
-      });
-    }
+    $backgroundImage.setAttribute('src', `//source.unsplash.com/random/${screen.width}x${screen.height}?nature,water`);
 
-    // ga
+    // ga --
 
     window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-135017895-1');
+    window.dataLayer.concat(['js', new Date()], ['config', 'UA-135017895-1']);
   }
   </script>
   <script async
