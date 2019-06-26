@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <head lang="en">
-  <title>Diglactic - Coming Soon</title>
+  <title>Diglactic - Web Design, Development, and Consulting</title>
   <meta name="theme-color"
         content="#5627c2">
   <meta name="viewport"
         content="width=device-width, initial-scale=1">
   <meta name="description"
-        content="New York-based web development coming soon.">
+        content="Whether you're looking for a new website, have an app idea, or just need some advice, we've got you covered.">
   <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700"
         rel="stylesheet">
   <style type="text/css">
@@ -22,63 +22,71 @@
   }
 
   body {
-    background  : #5627c2;
-    min-height  : 100%;
-    margin      : 0;
-    font-size   : 0;
-    overflow    : hidden;
-    cursor      : default;
-    user-select : none;
-  }
-
-  .btn {
-    color           : #ffffff;
-    font-size       : 1rem;
-    text-transform  : uppercase;
-    border          : 1px solid #ffffff;
-    margin          : 1rem 0;
-    text-decoration : none;
-    padding         : 1rem 2rem;
-    border-radius   : 2rem;
-    letter-spacing  : .5px;
-  }
-
-  .btn:hover {
-    background-color : #ffffff;
-    color            : #5627c2;
-  }
-
-  #background {
-    position        : fixed;
-    top             : 0;
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
+    background      : #eeeeee;
+    min-width       : 320px;
+    height          : 100%;
+    min-height      : fit-content;
+    margin          : 0;
+    font-size       : 0;
+    cursor          : default;
+    user-select     : none;
     display         : flex;
     align-items     : center;
     justify-content : center;
-    opacity         : .05;
-    z-index         : 0;
   }
 
-  @keyframes background__image--entrance {
-    0% {
-      transform : scale(1.05);
-    }
-    100% {
-      opacity : 1;
-    }
+  input,
+  textarea {
+    /* remove iOS inset shadows */
+    -webkit-appearance : none;
+    font               : inherit;
+    font-size          : 1rem;
+    display            : block;
+    background         : none;
+    border             : 1px solid #111111;
+    margin             : 1rem 0;
+    padding            : 1rem 1.25rem;
+    width              : 100%;
+    resize             : none;
+    border-radius      : .25rem;
+    outline            : none;
+    color              : #000000;
   }
 
-  #background__image {
-    opacity    : 0;
-    object-fit : cover;
-    width      : 100%;
-    height     : 100%;
+  input::placeholder,
+  textarea::placeholder {
+    color   : inherit;
+    opacity : 1;
   }
 
-  #background__image.background__image--ready {
-    animation : background__image--entrance 1s ease forwards;
+  input:focus,
+  textarea:focus {
+    background-color : #ffffff;
+    border-color     : #5627c2;
+  }
+
+  textarea {
+    height : 120px;
+  }
+
+  button {
+    font            : inherit;
+    font-size       : 1rem;
+    color           : #ffffff;
+    margin          : 1rem auto;
+    text-decoration : none;
+    padding         : 1rem 1.25rem;
+    background      : #222222;
+    border          : none;
+    cursor          : pointer;
+    border-radius   : .25rem;
+    width           : 100%;
+    outline         : none;
+  }
+
+  button:hover,
+  button:focus {
+    background-color : #5627c2;
   }
 
   @keyframes hero--entrance {
@@ -89,66 +97,74 @@
   }
 
   #hero {
-    max-height      : none;
-    min-height      : fit-content;
-    z-index         : 1;
-    position        : absolute;
-    top             : 0;
-    left            : 0;
-    right           : 0;
-    bottom          : 0;
-    overflow        : auto;
-    display         : flex;
-    flex-direction  : column;
-    align-items     : center;
-    justify-content : center;
-    animation       : hero--entrance .6s ease;
+    width          : 460px;
+    max-width      : 100%;
+    padding        : 4rem 1rem;
+    display        : flex;
+    flex-direction : column;
+    align-items    : center;
+    text-align     : center;
+    animation      : hero--entrance .6s ease;
   }
 
   #hero__logo {
-    max-width : 80%;
-    width     : 512px;
+    width     : 90%;
+    max-width : 380px;
   }
 
   #hero__subtitle {
-    font-size  : 1rem;
-    font-style : italic;
-    color      : #ffffff;
+    font-size  : 1.25rem;
+    color      : #222222;
     margin     : 2rem 0;
-    opacity    : .75;
+    font-style : italic;
+  }
+
+  #hero__form {
+    width          : 100%;
+    display        : flex;
+    align-items    : center;
+    flex-direction : column;
+  }
+
+  #hero__footer {
+    font-size      : .75rem;
+    margin-top     : 2rem;
+    text-transform : uppercase;
+    color          : #555555;
   }
   </style>
 </head>
 <body>
-  <div id="background">
-    <img id="background__image"
-         alt="Unsplash Wallpaper">
-  </div>
   <div id="hero">
     <img src="/assets/logo.svg"
          id="hero__logo"
          alt="Diglactic Logo">
     <small id="hero__subtitle">
-      Coming Soon
+      Web Design, Development, &amp; Consulting
     </small>
-    <a class="btn"
-       id="hero__button"
-       href="mailto:hello@diglactic.com">
-      Get In Touch
-    </a>
+    <form name="onboarding"
+          method="POST"
+          data-netlify="true"
+          id="hero__form">
+      <input type="text"
+             required
+             placeholder="Name">
+      <input type="email"
+             required
+             placeholder="Email">
+      <textarea name="message"
+                required
+                placeholder="How can we help?"></textarea>
+      <button type="submit">
+        Get In Touch
+      </button>
+    </form>
+    <small id="hero__footer">
+      &copy; 2019 Diglactic
+    </small>
   </div>
   <script>
   {
-    // landing--
-
-    const $backgroundImage = document.querySelector('#background__image');
-
-    $backgroundImage.addEventListener('load', () => {
-      $backgroundImage.classList.add('background__image--ready');
-    });
-
-    $backgroundImage.setAttribute('src', `//source.unsplash.com/random/${screen.width}x${screen.height}?nature,water`);
-
     // ga --
 
     window.dataLayer = window.dataLayer || [];
