@@ -18,7 +18,7 @@
 
   html {
     height : 100%;
-    font   : 14px 'Oyxgen', sans-serif;
+    font   : 16px 'Oyxgen', sans-serif;
   }
 
   body {
@@ -39,10 +39,18 @@
   a {
     color           : #000000;
     text-decoration : none;
+    outline         : none;
   }
 
-  a:hover {
+  a:hover,
+  a:focus {
     color : #5627c2;
+  }
+
+  input,
+  textarea,
+  button {
+    margin : .75rem 0;
   }
 
   input,
@@ -54,7 +62,6 @@
     display            : block;
     background         : none;
     border             : 1px solid #222222;
-    margin             : 1rem 0;
     padding            : 1rem 1.25rem;
     width              : 100%;
     resize             : none;
@@ -83,7 +90,6 @@
     font            : inherit;
     font-size       : 1rem;
     color           : #ffffff;
-    margin          : 1rem auto;
     text-decoration : none;
     padding         : 1rem 1.25rem;
     background      : #222222;
@@ -107,7 +113,7 @@
   }
 
   #hero {
-    width          : 460px;
+    width          : 480px;
     max-width      : 100%;
     padding        : 4rem 1rem;
     display        : flex;
@@ -123,8 +129,7 @@
   }
 
   #hero__subtitle {
-    font-size  : 1.25rem;
-    color      : #222222;
+    font-size  : 1rem;
     margin     : 2rem 0;
     font-style : italic;
   }
@@ -165,11 +170,11 @@
                 required
                 placeholder="How can we help?"></textarea>
       <button type="submit">
-        Get In Touch
+        Send Now
       </button>
     </form>
     <small id="hero__footer">
-      &copy; 2019 Diglactic | A
+      &copy; 2019 &bull; A
       <a href="https://shengslogar.com/?utm_source=diglactic&utm_medium=website&utm_campaign=footer">Sheng Slogar</a>
       company
     </small>
