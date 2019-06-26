@@ -33,6 +33,16 @@
     display         : flex;
     align-items     : center;
     justify-content : center;
+    color           : #555555;
+  }
+
+  a {
+    color           : #000000;
+    text-decoration : none;
+  }
+
+  a:hover {
+    color : #5627c2;
   }
 
   input,
@@ -130,13 +140,12 @@
     font-size      : .75rem;
     margin-top     : 2rem;
     text-transform : uppercase;
-    color          : #555555;
   }
   </style>
 </head>
 <body>
   <div id="hero">
-    <img src="/assets/logo.svg"
+    <img src="/assets/logo.svg?=v0.01"
          id="hero__logo"
          alt="Diglactic Logo">
     <small id="hero__subtitle">
@@ -160,7 +169,7 @@
       </button>
     </form>
     <small id="hero__footer">
-      &copy; 2019 Diglactic
+      &copy; 2019 Diglactic | A <a href="https://shengslogar.com">Sheng Slogar</a> company
     </small>
   </div>
   <script>
