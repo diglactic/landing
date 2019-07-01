@@ -182,9 +182,10 @@
   <script>
   {
     // ga --
-
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push(['js', new Date()], ['config', 'UA-135017895-1']);
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-135017895-1');
   }
   </script>
   <script async
