@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <head lang="en">
   <title>Diglactic - Web Design, Development, and Consulting</title>
-  <meta name="theme-color"
-        content="#5627c2">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Whether you're looking for a new website, have an app idea, or just need some advice, we've got you covered.">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700"
-        rel="stylesheet">
+  <meta name="theme-color" content="#5627c2">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Whether you're looking for a new website, have an app idea, or just need some advice, we've got you covered.">
+  <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
   <style type="text/css">
   * {
     box-sizing          : border-box;
@@ -161,12 +157,17 @@
           data-netlify="true"
           id="hero__form">
       <input type="text"
+             name="name"
+             aria-label="Name"
              required
              placeholder="Name">
       <input type="email"
+             name="email"
+             aria-label="Email Address"
              required
              placeholder="Email">
       <textarea name="message"
+                aria-label="Message"
                 required
                 placeholder="How can we help?"></textarea>
       <button type="submit">
@@ -188,6 +189,5 @@
     gtag('config', 'UA-135017895-1');
   }
   </script>
-  <script async
-          src="https://www.googletagmanager.com/gtag/js?id=UA-135017895-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135017895-1"></script>
 </body>
