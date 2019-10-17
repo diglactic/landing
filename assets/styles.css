@@ -1,7 +1,7 @@
 * {
   box-sizing          : border-box;
-  transition          : .2s ease;
-  transition-property : opacity, color, border-color, background-color;
+  transition          : .25s ease;
+  transition-property : opacity, color, border-color, background-color, box-shadow;
 }
 
 html {
@@ -10,10 +10,9 @@ html {
 }
 
 body {
-  background      : #111111;
+  background      : #0f0f0f;
   min-width       : 320px;
-  height          : 100%;
-  min-height      : fit-content;
+  min-height      : 100%;
   margin          : 0;
   font-size       : 0;
   cursor          : default;
@@ -21,7 +20,7 @@ body {
   display         : flex;
   align-items     : center;
   justify-content : center;
-  color           : #777777;
+  color           : #aaaaaa;
 }
 
 a {
@@ -38,7 +37,9 @@ a:focus {
 input,
 textarea,
 button {
-  margin : .75rem 0;
+  margin        : .5rem 0;
+  border-radius : .4rem;
+  border        : none;
 }
 
 input,
@@ -48,12 +49,10 @@ textarea {
   font               : inherit;
   font-size          : 1rem;
   display            : block;
-  background         : none;
-  border             : 1px solid #333333;
+  background         : #222222;
   padding            : 1rem 1.25rem;
   width              : 100%;
   resize             : none;
-  border-radius      : .25rem;
   outline            : none;
   color              : inherit;
 }
@@ -66,8 +65,8 @@ textarea::placeholder {
 
 input:focus,
 textarea:focus {
-  border-color     : #000000;
   background-color : #ffffff;
+  color            : #000000;
 }
 
 textarea {
@@ -80,18 +79,17 @@ button {
   color           : #ffffff;
   text-decoration : none;
   padding         : 1rem 1.25rem;
-  background      : #222222;
-  border          : none;
+  background      : #5627c2;
   cursor          : pointer;
-  border-radius   : .25rem;
   width           : 100%;
   outline         : none;
+  margin-top      : 2rem;
 }
 
-button:hover,
 button:focus {
-  background-color : #5627c2;
+  opacity : .8;
 }
+
 
 @keyframes hero--entrance {
   0% {
@@ -103,7 +101,7 @@ button:focus {
 #hero {
   width          : 480px;
   max-width      : 100%;
-  padding        : 4rem 1rem;
+  padding        : 6rem 1rem 3rem;
   display        : flex;
   flex-direction : column;
   align-items    : center;
@@ -112,13 +110,13 @@ button:focus {
 }
 
 #hero__logo {
-  width     : 90%;
+  width     : 92%;
   max-width : 380px;
 }
 
 #hero__subtitle {
   font-size  : 1rem;
-  margin     : 2rem 0;
+  margin     : 3rem 0;
   font-style : italic;
 }
 
@@ -130,7 +128,6 @@ button:focus {
 }
 
 #hero__footer {
-  font-size      : .75rem;
-  margin-top     : 2rem;
-  text-transform : uppercase;
+  font-size  : .75rem;
+  margin-top : 3rem;
 }
