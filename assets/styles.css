@@ -1,0 +1,135 @@
+* {
+  box-sizing          : border-box;
+  transition          : .2s ease;
+  transition-property : opacity, color, border-color, background-color;
+}
+
+html {
+  height : 100%;
+  font   : 16px 'Oyxgen', sans-serif;
+}
+
+body {
+  background      : #111111;
+  min-width       : 320px;
+  height          : 100%;
+  min-height      : fit-content;
+  margin          : 0;
+  font-size       : 0;
+  cursor          : default;
+  user-select     : none;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+  color           : #555555;
+}
+
+a {
+  color           : #000000;
+  text-decoration : none;
+  outline         : none;
+}
+
+a:hover,
+a:focus {
+  color : #5627c2;
+}
+
+input,
+textarea,
+button {
+  margin : .75rem 0;
+}
+
+input,
+textarea {
+  /* remove iOS inset shadows */
+  -webkit-appearance : none;
+  font               : inherit;
+  font-size          : 1rem;
+  display            : block;
+  background         : none;
+  border             : 1px solid #222222;
+  padding            : 1rem 1.25rem;
+  width              : 100%;
+  resize             : none;
+  border-radius      : .25rem;
+  outline            : none;
+  color              : #555555;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color   : inherit;
+  opacity : 1;
+}
+
+input:focus,
+textarea:focus {
+  background-color : #ffffff;
+}
+
+textarea {
+  height : 120px;
+}
+
+button {
+  font            : inherit;
+  font-size       : 1rem;
+  color           : #ffffff;
+  text-decoration : none;
+  padding         : 1rem 1.25rem;
+  background      : #222222;
+  border          : none;
+  cursor          : pointer;
+  border-radius   : .25rem;
+  width           : 100%;
+  outline         : none;
+}
+
+button:hover,
+button:focus {
+  background-color : #5627c2;
+}
+
+@keyframes hero--entrance {
+  0% {
+    opacity   : 0;
+    transform : scale(.98);
+  }
+}
+
+#hero {
+  width          : 480px;
+  max-width      : 100%;
+  padding        : 4rem 1rem;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  text-align     : center;
+  animation      : hero--entrance .4s ease;
+}
+
+#hero__logo {
+  width     : 90%;
+  max-width : 380px;
+}
+
+#hero__subtitle {
+  font-size  : 1rem;
+  margin     : 2rem 0;
+  font-style : italic;
+}
+
+#hero__form {
+  width          : 100%;
+  display        : flex;
+  align-items    : center;
+  flex-direction : column;
+}
+
+#hero__footer {
+  font-size      : .75rem;
+  margin-top     : 2rem;
+  text-transform : uppercase;
+}
