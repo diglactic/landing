@@ -1,46 +1,38 @@
 <!DOCTYPE html>
 <head lang="en">
-  <title>Diglactic - Utah Web Design, Development, and Consulting</title>
-  <meta name="theme-color" content="#5627c2">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Whether you're looking for a new website, have an app idea, or just need some advice, we've got you covered.">
-  <link href="/assets/styles.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet">
+    <title>Diglactic - Utah Web Design, Development, and Consulting</title>
+    <meta name="theme-color" content="#5627c2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Whether you're looking for a new website, have an app idea, or just need some advice, we've got you covered.">
+    <link href="/assets/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-<body class="preload">
-  <div id="hero">
-    <img src="/assets/logo.svg?=v0.02"
-         id="hero__logo"
-         alt="Diglactic Logo">
-    <small id="hero__subtitle">
-      Web Design, Development, &amp; Consulting
-    </small>
-    <form name="onboarding"
-          method="POST"
-          data-netlify="true"
-          id="hero__form">
-      <input type="text"
-             name="name"
-             aria-label="Name"
-             required
-             placeholder="Name">
-      <input type="email"
-             name="email"
-             aria-label="Email Address"
-             required
-             placeholder="Email">
-      <textarea name="message"
-                aria-label="Message"
-                required
-                placeholder="How can we help?"></textarea>
-      <button type="submit">
-        Get In Touch
-      </button>
-    </form>
-    <small id="hero__footer">
-      &copy; 2020 Diglactic, LLC
-    </small>
-  </div>
-  <script async src="/assets/script.js"></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135017895-1"></script>
+<body class="landing preload">
+
+    <section class="landing-section landing-hero">
+        <div class="landing-section__content landing-hero__content">
+            <img src="/assets/landing-hero-background.jpg"
+                 alt="Full moon"
+                 class="landing-hero__background">
+            <img src="/assets/logo.svg"
+                 alt="Diglactic Logo"
+                 class="landing-hero__logo">
+            <div class="landing-hero__content">
+                <h1 class="landing-hero__title">
+                    <strong>Shoot</strong><br>
+                    for the <strong>Moon</strong>
+                </h1>
+                <small class="landing-hero__subtitle">
+                    Your passion. Our talent.
+                </small>
+                <button>
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script async src="/assets/script.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135017895-1"></script>
 </body>
