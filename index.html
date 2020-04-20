@@ -8,14 +8,21 @@
     <link href="/assets/styles.css" rel="stylesheet">
 </head>
 <body class="landing preload">
+    <a class="landing-banner"
+       href="https://newsroom.diglactic.com/covid-19/"
+       target="_blank">
+        Read our COVID-19 response
+        <i class="material-icons"
+           aria-hidden="true">arrow_forward</i>
+    </a>
 
     <section class="landing-section landing-hero">
         <div class="landing-section__content landing-hero__content">
             <img src="/assets/landing-hero-background.jpg"
-                 alt="Full moon"
+                 alt="Full moon background"
                  class="landing-hero__background">
             <img src="/assets/logo.svg"
-                 alt="Diglactic Logo"
+                 alt="Diglactic logo"
                  class="landing-hero__logo">
             <div class="landing-hero__text">
                 <h1 class="landing-hero__title">
@@ -23,9 +30,9 @@
                     for the <strong>Moon</strong>
                 </h1>
                 <small class="landing-hero__subtitle">
-                    Your passion. Our talent.
+                    Space-grade web development, design, and consulting
                 </small>
-                <a href="#"
+                <a href="#intro"
                    class="btn landing-hero__cta">
                     Learn More
                 </a>
@@ -33,27 +40,29 @@
         </div>
     </section>
 
-    <section class="landing-section landing-section--center">
+    <section class="landing-section landing-section--center"
+             id="intro">
         <h2 class="landing-section__title">
             Start your engines
         </h2>
         <div class="landing-section__content">
             <p>
-                Whether you're a full-fledged business in need of an refresh, you have a new idea that needs a face, or
-                anything in between, we've got your back. Every project starts with a free consultation. No strings
+                Whether you're a full-fledged business in need of a facelift, you have a new idea that needs a home, or
+                anything in between, we've got your back. Every project starts with a free consultation, no strings
                 attached!
             </p>
         </div>
 
         <a class="btn"
-           href="#">
+           target="_blank"
+           href="https://calendly.com/shengslogar/free-consultation">
             Schedule a Call
         </a>
     </section>
 
     <section class="landing-section landing-section--center">
         <h2 class="landing-section__title">
-            Our services
+            Your passion, our talent
         </h2>
         <div class="landing-section__content">
             <p>
@@ -80,7 +89,7 @@
         </div>
 
         <a class="btn"
-           href="#">
+           href="mailto:sales@diglactic.com">
             Get in Touch
         </a>
     </section>
@@ -88,51 +97,85 @@
 
     <section class="landing-section landing-section--center">
         <h2 class="landing-section__title">
-            Meet the Team
+            Meet the team
         </h2>
-        <div class="landing-section__content">
-            <p>
-                Sheng Slogar
-                Owner
-
-                Sheng broke onto the web development scene in 2014. Since then, he's worked with numerous technologies
-                and clients ranging from startup to Fortune 500.
-            </p>
-            <p>
-                Join our team
-
-                Ready to explore the future with us? Fill out a short application, and we'll reach out when we have any
-                openings. Easy.
-            </p>
+        <div class="landing-section__content landing-team-list">
+            <div class="landing-team-list-item">
+                <div class="landing-team-list-item__headshot">
+                    <img src="/assets/landing-team-sheng.jpg"
+                         alt="Sheng Slogar headshot">
+                </div>
+                <div class="landing-team-list-item__content">
+                    <h3 class="landing-team-list-item__name">Sheng Slogar</h3>
+                    <h6 class="landing-team-list-item__position">Web Developer</h6>
+                    <p class="landing-team-list-item__bio">
+                        Sheng broke onto the web development scene in 2014. Since then, he's worked with numerous
+                        technologies and clients ranging from startup to Fortune 500.
+                    </p>
+                </div>
+            </div>
+            <div class="landing-team-list-item">
+                <div class="landing-team-list-item__headshot">
+                    <i class="material-icons"
+                       aria-hidden="true">person</i>
+                </div>
+                <div class="landing-team-list-item__content">
+                    <h3 class="landing-team-list-item__name">Join Our Team</h3>
+                    <p class="landing-team-list-item__bio">
+                        Ready to explore the future with us? Fill out a short application, and we'll reach out when we
+                        have any openings. Easy!
+                    </p>
+                </div>
+            </div>
         </div>
 
         <a class="btn"
-           href="#">
+           href="https://forms.gle/VxPSm5AB9dPo2hbQA"
+           target="_blank">
             Apply Now
         </a>
     </section>
 
 
     <section class="landing-section landing-section--center">
+        <div class="landing-section__hero">
+            <img src="/assets/landing-location-hero.jpg"
+                 alt="Utah landscape image">
+        </div>
         <h2 class="landing-section__title">
-            Born and raised in Utah </h2>
+            Born and raised in Utah
+        </h2>
         <div class="landing-section__content">
             <p>
-                Serving customers in North America since 2017, we're proud to call Utah our home, along with hundreds of
-                other pioneering companies. We never outsource your work to anyone. The result: quality software you can
-                trust.
+                Serving customers in North America since 2017, we're proud to call Utah, along with hundreds of
+                other pioneering companies, our home.
+                We never outsource your work to anyone which results in quality software you can trust.
             </p>
         </div>
     </section>
 
     <footer class="landing-footer">
         <section class="landing-footer__info">
-            8030 S 1400 E
-            Sandy, UT 84093
-
-            sales@diglactic.com
-
-            (801) 839-4218
+            <div>
+                <img src="/assets/logo.svg"
+                     alt="Diglactic logo"
+                     class="landing-footer__logo">
+            </div>
+            <div>
+                8030 S 1400 E
+                <br>
+                Sandy, UT 84093
+            </div>
+            <div>
+                <a href="mailto:sales@diglactic.com">
+                    sales@diglactic.com
+                </a>
+            </div>
+            <div>
+                <a href="tel:+18018394218">
+                    (801) 839-4218
+                </a>
+            </div>
         </section>
 
         <section class="landing-footer__copyright">
@@ -142,5 +185,4 @@
 
 
     <script async src="/assets/script.js"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-135017895-1"></script>
 </body>
