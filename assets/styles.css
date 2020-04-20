@@ -94,9 +94,6 @@ button:focus,
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .landing-banner i {
