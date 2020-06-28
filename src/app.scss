@@ -323,6 +323,67 @@ button,
     }
   }
 
+  &-sponsoring-list {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin: 1rem -1rem 0;
+
+    &-item {
+      background: #f9f9f9;
+      margin: 1rem;
+      border-radius: .25rem;
+      box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, .2);
+      overflow: hidden;
+      flex: 1 1 50%;
+      line-height: normal;
+      text-transform: none;
+      max-width: 600px;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 1.25rem 1.5rem -1rem rgba(0, 0, 0, .3);
+      }
+
+      &__hero {
+        height: 250px;
+        background: #eee;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__title,
+      &__description {
+        padding: 0 1rem;
+      }
+
+      &__title {
+        font-weight: bold;
+        font-size: 1.25rem;
+        margin: 1rem 0 0;
+      }
+
+      &__description {
+        font-size: .85rem;
+        margin: .5rem 0 1rem;
+      }
+    }
+
+    @media all and (max-width: $screen-md) {
+      flex-wrap: wrap;
+
+      &-item {
+        &__hero {
+          height: 200px;
+        }
+      }
+    }
+  }
+
   &-footer {
     color: #fff;
     padding: 1rem;
