@@ -105,7 +105,7 @@ button,
   &:hover,
   &:focus {
     background: $brand-purple;
-    border-color: lighten($brand-purple, 5%);
+    border-color: lighten($brand-purple, 8%);
     color: #fff;
     text-decoration: none;
     outline: none;
@@ -139,8 +139,8 @@ button,
         color: $brand-purple;
       }
 
-      p {
-        margin: 1rem 0;
+      p + p {
+        margin: 1rem 0 0;
       }
     }
   }
@@ -291,9 +291,13 @@ button,
     }
 
     &__position {
-      font-size: 1rem;
+      font-size: .75rem;
       font-weight: normal;
       margin: .5rem 0 0;
+    }
+
+    &__bio {
+      margin: 1rem 0 0;
     }
 
     @media (max-width: $screen-md) {
