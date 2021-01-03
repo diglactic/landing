@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400;700&display=swap');
+// Semicolon breaks Laravel Mix
+// @see https://github.com/JeffreyWay/laravel-mix/issues/2430
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200%3b400%3b700&display=swap');
+
 @import url('https://use.fontawesome.com/releases/v5.15.1/css/all.css');
 
 $screen-md: 1024px;
