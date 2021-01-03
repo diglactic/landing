@@ -1,9 +1,15 @@
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons&display=block');
-@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;400&display=swap');
 
 $screen-md: 1024px;
-$screen-sm: 500px;
-$screen-xs: 400px;
+$screen-sm: 450px;
+
+$brand-purple: #5627c2;
+
+@mixin container {
+  padding: 2rem;
+  max-width: 1024px;
+  margin: 0 auto;
+}
 
 * {
   box-sizing: border-box;
@@ -12,7 +18,7 @@ $screen-xs: 400px;
 
 html {
   height: 100%;
-  font: 18px 'Oxygen', 'Segoe UI', 'Verdana', 'Calibri', sans-serif;
+  font: 18px 'IBM Plex Sans', 'Segoe UI', 'Verdana', 'Calibri', sans-serif;
   cursor: default;
 }
 
@@ -21,7 +27,7 @@ body {
   margin: 0;
   font-size: 0;
   min-width: 320px;
-  background: #1c1c1c;
+  background: #000;
 }
 
 body:not(.preload) * {
@@ -35,6 +41,7 @@ a {
 }
 
 a:focus {
+  outline: none;
   text-decoration: underline;
 }
 
@@ -52,118 +59,129 @@ img.lazy--loaded {
   animation: img-lazy--loaded .5s ease;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+
+  li {
+    &::before {
+      content: '';
+      display: inline-block;
+      width: .5rem;
+      height: .5rem;
+      margin: 0 .25rem 0 0;
+      border: 1px solid #fff;
+    }
+  }
+}
+
 button,
 .btn {
   font-family: inherit;
   font-size: 1rem;
   font-weight: 500;
-  border: 3px solid #222;
-  border-radius: 2rem;
+  border: 2px solid #fff;
   background: none;
-  color: inherit;
   text-transform: uppercase;
   padding: .7rem 1.65rem;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   line-height: normal;
+  color: #fff;
 
   &::after {
-
-    font: normal 1rem 'Material Icons';
-    text-transform: none;
-    /* Hide from screen readers
-       @see https://stackoverflow.com/a/47451397/253550 */
-    content: 'arrow_forward' / '';
-    margin-left: 1rem;
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background: url('/arrow-right.svg') no-repeat right center;
+    background-size: contain;
+    margin-left: .5rem;
   }
 
   &:hover,
   &:focus {
-    background: #000;
+    background: $brand-purple;
+    border-color: lighten($brand-purple, 5%);
     color: #fff;
     text-decoration: none;
+    outline: none;
+  }
+
+  + button,
+  + .btn {
+    margin-left: .5rem;
   }
 }
 
 .landing {
-  &-banner {
-    color: #000;
-    text-decoration: none;
-    background: #fff121;
-    font-size: 1rem;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-
-    i {
-      margin-left: .5rem;
-      font-size: .85rem;
-    }
-
-    @media all and (max-width: $screen-sm) {
-      font-size: .85rem;
-    }
-  }
-
   &-section {
-    padding: 5rem 1rem;
-    background: #fff;
-    text-transform: lowercase;
+    @include container;
 
-    &:nth-of-type(2n + 3) {
-      background: #F4F7FB;
-    }
-
-    &--center {
-      text-align: center;
-    }
-
-    &__hero {
-      margin: 0 auto 6rem;
-      width: 1000px;
-      height: 400px;
-      max-width: 100%;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
+    overflow: hidden;
 
     &__title {
-      font-size: 3rem;
+      color: #fff;
+      font-size: 2rem;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
     }
 
     &__content {
-      padding: 2rem 0;
-      max-width: 1024px;
-      margin: 0 auto;
       font-size: 1rem;
       line-height: 2;
+      color: #fff;
+
+      a:not(.btn) {
+        color: $brand-purple;
+      }
+
+      p {
+        margin: 1rem 0;
+      }
     }
   }
-
 
   &-hero {
     height: 100%;
-    min-height: 800px;
+    min-height: 760px;
     max-height: 1100px;
-    background: #1c1c1c;
     color: #fff;
     position: relative;
-    overflow: hidden;
-    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    &__banner {
+      color: #fff;
+      text-decoration: none;
+      background: $brand-purple;
+      font-size: 1rem;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      position: relative;
+      z-index: 1000;
+      margin: 0 0 1rem;
+
+      i {
+        margin-left: .5rem;
+        font-size: .85rem;
+      }
+
+      @media (max-width: $screen-sm) {
+        font-size: .85rem;
+      }
+    }
 
     &__content {
+      @include container;
+
+      flex: 1 0 auto;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      height: 100%;
       line-height: normal;
     }
 
@@ -175,7 +193,7 @@ button,
       width: 70%;
       height: 80%;
       object-fit: contain;
-      opacity: .35;
+      opacity: .25;
       pointer-events: none;
 
       ~ * {
@@ -185,7 +203,7 @@ button,
     }
 
     &__logo {
-      width: 12rem;
+      width: 10rem;
       flex: 0 0 auto;
     }
 
@@ -198,29 +216,18 @@ button,
     }
 
     &__title {
-      font-size: 6rem;
-      font-weight: normal;
+      font-size: 5rem;
+      font-weight: 200;
       text-transform: uppercase;
     }
 
     &__subtitle {
-      font-size: 1.25rem;
+      font-size: 1rem;
       display: block;
-      opacity: .8;
       margin: 1rem 0 4rem;
     }
 
-    &__cta {
-      border-color: #fff;
-
-      &:hover,
-      &:focus {
-        background: #fff;
-        color: #000;
-      }
-    }
-
-    @media all and (max-width: $screen-md) {
+    @media (max-width: $screen-md) {
       &__title {
         font-size: 4.5rem;
       }
@@ -230,31 +237,9 @@ button,
       }
     }
 
-    @media all and (max-width: $screen-sm) {
-      min-height: 700px;
-
-      &__content {
-        align-items: center;
-      }
-
-      &__text {
-        align-items: center;
-        text-align: center;
-      }
-
+    @media (max-width: $screen-sm) {
       &__title {
         font-size: 3.5rem;
-      }
-
-      &__subtitle {
-        font-size: .85rem;
-        width: 250px;
-      }
-    }
-
-    @media all and (max-width: $screen-xs) {
-      &__title {
-        font-size: 3rem;
       }
     }
   }
@@ -269,13 +254,15 @@ button,
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #eee;
-      width: 300px;
-      height: 300px;
+      background: #111;
+      width: 13rem;
+      height: 16rem;
+      max-width: 100%;
       flex: 0 0 auto;
       overflow: hidden;
 
       i {
+        color: #fff;
         font-size: 4rem;
       }
 
@@ -287,38 +274,31 @@ button,
     }
 
     &__content {
-      text-align: left;
-      margin: 0 0 0 3rem;
-      padding: 1rem 0 1rem;
+      margin: 0 0 0 2rem;
+    }
+
+    &__name,
+    &__position {
       line-height: normal;
     }
 
     &__name {
-      font-size: 2rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
     }
 
     &__position {
       font-size: 1rem;
-      margin: 1rem 0 0;
+      font-weight: normal;
+      margin: .5rem 0 0;
     }
 
-    &__bio {
-      margin: 2rem 0 0;
-      line-height: 2;
-    }
-
-    @media all and (max-width: $screen-md) {
+    @media (max-width: $screen-md) {
       flex-direction: column;
       align-items: flex-start;
 
       &__content {
-        margin: 0;
-      }
-    }
-
-    @media all and (max-width: $screen-sm) {
-      &__headshot {
-        width: 100%;
+        margin: 1rem 0 0;
       }
     }
   }
@@ -326,67 +306,54 @@ button,
   &-sponsoring-list {
     display: flex;
     align-items: stretch;
-    justify-content: center;
-    margin: 1rem -1rem 0;
+    flex-wrap: wrap;
+    margin: 0 -1rem;
 
     &-item {
-      background: #f9f9f9;
       margin: 1rem;
-      border-radius: .25rem;
-      box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, .2);
       overflow: hidden;
-      flex: 1 1 50%;
       line-height: normal;
       text-transform: none;
-      max-width: 600px;
-
-      &:hover,
-      &:focus {
-        box-shadow: 0 1.25rem 1.5rem -1rem rgba(0, 0, 0, .3);
-      }
-
-      &__hero {
-        height: 250px;
-        background: #eee;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      &__title,
-      &__description {
-        padding: 0 1rem;
-      }
+      width: 350px;
+      color: #fff !important;
 
       &__title {
         font-weight: bold;
         font-size: 1.25rem;
-        margin: 1rem 0 0;
+        text-transform: uppercase;
       }
 
       &__description {
-        font-size: .85rem;
-        margin: .5rem 0 1rem;
+        font-size: .75rem;
       }
     }
 
-    @media all and (max-width: $screen-md) {
+    @media (max-width: $screen-md) {
       flex-wrap: wrap;
-
-      &-item {
-        &__hero {
-          height: 200px;
-        }
-      }
     }
   }
 
   &-footer {
-    color: #fff;
-    padding: 1rem;
+    margin: 4rem 0 0;
+    position: relative;
+
+    &__backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: .25;
+      pointer-events: none;
+      object-fit: cover;
+    }
+
+    &__content {
+      @include container;
+
+      color: #fff;
+    }
 
     &__info,
     &__copyright {
@@ -410,14 +377,18 @@ button,
       max-width: 200px;
     }
 
+    &__social-links {
+      font-size: 1rem;
+
+      a + a {
+        margin: 0 0 0 .5rem;
+      }
+    }
+
     &__copyright {
       padding: 0 0 1rem;
       text-transform: uppercase;
       font-size: .65rem;
-    }
-
-    @media all and (max-width: $screen-sm) {
-      text-align: center;
     }
   }
 }

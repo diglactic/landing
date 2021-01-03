@@ -2,9 +2,9 @@
  * google analytics
  */
 
-var gid = 'UA-135017895-1';
+const gid = 'UA-135017895-1';
 
-var gscript = document.createElement('script');
+const gscript = document.createElement('script');
 gscript.async = true;
 gscript.src = 'https://www.googletagmanager.com/gtag/js?id=' + gid;
 document.body.appendChild(gscript);
@@ -15,16 +15,16 @@ function gtag() {
     dataLayer.push(arguments);
 }
 
-gtag('js', new Date());
+gtag('js', new Date);
 gtag('config', gid);
 
 /**
  * lazy load images
  */
 document.querySelectorAll('img')
-    .forEach(function (image) {
+    .forEach((image) => {
         if (!image.complete) {
-            image.addEventListener('load', function () {
+            image.addEventListener('load', () => {
                 image.classList.add('lazy--loaded');
             });
             image.classList.add('lazy');
@@ -36,6 +36,25 @@ document.querySelectorAll('img')
  * @see https://stackoverflow.com/a/42969608/2535504
  */
 
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     document.body.classList.remove('preload');
 });
+
+/**
+ * smooth-scroll anchor hash
+ */
+document.querySelectorAll('a')
+    .forEach((anchor) => {
+        const {pathname, origin} = window.location;
+
+        if (anchor.hash !== ''
+            && anchor.pathname === pathname
+            && anchor.origin === origin
+        ) {
+            anchor.addEventListener('click', (event) => {
+                document.querySelector(anchor.hash)
+                    .scrollIntoView({behavior: 'smooth'});
+                event.preventDefault();
+            });
+        }
+    });
